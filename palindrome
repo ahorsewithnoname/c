@@ -1,0 +1,53 @@
+#include <stdio.h>
+//ler a string
+
+char s[];
+int j = 0;
+
+
+int strlen(char s[]){
+	int c=0;
+	while(s[c]!='\n') c++;
+	return c;
+}
+
+char trim(char s[]){
+	char trimmed[strlen(s)];	
+	for (int i = 0; i<strlen(s); i++){
+			if(s[i]>='a'&&s[i]<='z'){
+			trimmed[j] = s[i];
+			j++;
+		}
+	}
+	return trimmed;
+}
+
+char invert(char s[]){
+	char sInvertida[strlen(s)];
+	for(int i=strlen(s);i>=0;i--){
+		sInvertida[strlen(s)-i] = s[i];
+	}
+	return sInvertida;
+}
+
+main(){
+	puts("insira:");
+gets(s);
+
+char sDireta[strlen(trimmed(s))] = trimmed(s);
+char sInversa[strlen(trimmed(s))] = invert(trimmed(s));
+
+if(sDireta == sInversa){
+	puts(1);
+}else{
+	puts(0);
+}
+
+
+}
+
+
+
+//retirar tudo que não for letras
+//copia de forma inversa para outra string
+//compara as duas.
